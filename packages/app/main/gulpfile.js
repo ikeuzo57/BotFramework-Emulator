@@ -646,10 +646,10 @@ function getFileList(platform, target, options = {}) {
       break;
 
     case "linux-":
-      filelist.push(`${path}/${options.basename}-${options.version}-i386.AppImage`);
-      filelist.push(`${path}/${options.basename}-${options.version}-x86_64.AppImage`);
-      filelist.push(`${path}/${options.basename}_${options.version}_i386.deb`);
-      filelist.push(`${path}/${options.basename}_${options.version}_amd64.deb`);
+      filelist.push(`${path}/${pjson.name}-${options.version}-i386.AppImage`);
+      filelist.push(`${path}/${pjson.name}-${options.version}-x86_64.AppImage`);
+      filelist.push(`${path}/${pjson.name}_${options.version}_i386.deb`);
+      filelist.push(`${path}/${pjson.name}_${options.version}_amd64.deb`);
       break;
   }
   return filelist;
