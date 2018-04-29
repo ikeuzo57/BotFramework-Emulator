@@ -546,12 +546,11 @@ gulp.task('package:linux', function () {
 function publishFiles(filelist) {
   var CancellationToken = require('electron-builder-http/out/CancellationToken').CancellationToken;
   var GitHubPublisher = require('electron-publish/out/gitHubPublisher').GitHubPublisher;
-  var MultiProgress = require('electron-publish/out/multiProgress').MultiProgress;
   var publishConfig = replacePublishEnvironmentVars(require('./scripts/config/publish.json'));
 
   const context = {
     cancellationToken: new CancellationToken(),
-    progress: new MultiProgress()
+    progress: null
   };
   const publisher = new GitHubPublisher(
     context,
